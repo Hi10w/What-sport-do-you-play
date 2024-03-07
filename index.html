@@ -1,0 +1,70 @@
+<!DOCTYPE html> <html><head>
+        
+        <title>What sport do you play?</title>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald&amp;display=swap" rel="stylesheet">
+    <style>body {
+    font-family: 'COPPERPLATE', fantasy;
+    background-color: Red;
+
+    text-align: center;
+}
+
+img {
+    width: 400px;
+}</style></head>
+    <body>
+        <div class="title">
+            <h1>What sport do you play?</h1>
+        </div>
+        <div class="questions">
+            <h4>How tall are you?</h4>
+
+            <img src="https://media.tenor.com/oitkzb4yR0AAAAAM/short-fight.gif" alt="short guy fighting tall guy">
+            <input class="height" placeholder="your answer">
+            <br>
+            <div class="height-message"></div>
+            <h4>Do you own cleats?</h4>
+
+            <img src="https://i.gifer.com/D17T.gif" alt="cleats">
+
+            <input class="cleat" placeholder="your answer">
+            <br>
+
+            <button class="submit">find out</button>
+        </div>
+        <div class="messages">
+        </div>
+  <div class="messages2">
+            this is where the user will see how many times you did the quiz!
+        </div>
+
+
+    
+<script>
+/*__POPCODESTART__*/
+var counter = 0;
+var submitButton = document.querySelector(".submit");
+var messages2 = document.querySelector(".messages2");
+var messages = document.querySelector(".messages");
+var quizResult = document.querySelector(".results");
+
+submitButton.onclick = function () {
+  counter = counter + 1;
+  console.log(counter);
+  var heightInput = document.querySelector(".height").value;
+  var cleatInput = document.querySelector(".cleat").value;
+  console.log(heightInput);
+  messages.innerHTML = "userComment";
+  messages2.innerHTML = " you did the quiz this many times " + counter;
+
+  if (cleatInput === "yes" && heightInput >= 67) {
+    messages.innerHTML = "American football";
+  } else if (cleatInput === "no" && heightInput >= 67) {
+    messages.innerHTML = "Basketball";
+  } else if (cleatInput === "no" && heightInput <= 67) {
+    messages.innerHTML = "you dont play sports";
+  } else if (cleatInput === "yes" && heightInput <= 67) {
+    messages.innerHTML = "soccer";
+  }
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInBvcGNvZGVQcmV2aWV3LmpzIl0sIm5hbWVzIjpbImNvdW50ZXIiLCJzdWJtaXRCdXR0b24iLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJtZXNzYWdlczIiLCJtZXNzYWdlcyIsInF1aXpSZXN1bHQiLCJvbmNsaWNrIiwiY29uc29sZSIsImxvZyIsImhlaWdodElucHV0IiwidmFsdWUiLCJjbGVhdElucHV0IiwiaW5uZXJIVE1MIl0sIm1hcHBpbmdzIjoiQUFFQSxJQUFJQSxPQUFPLEdBQUcsQ0FBZDtBQUNBLElBQUlDLFlBQVksR0FBR0MsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLENBQW5CO0FBQ0EsSUFBSUMsU0FBUyxHQUFHRixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsWUFBdkIsQ0FBaEI7QUFDQSxJQUFJRSxRQUFRLEdBQUdILFFBQVEsQ0FBQ0MsYUFBVCxDQUF1QixXQUF2QixDQUFmO0FBQ0EsSUFBSUcsVUFBVSxHQUFHSixRQUFRLENBQUNDLGFBQVQsQ0FBdUIsVUFBdkIsQ0FBakI7O0FBSUFGLFlBQVksQ0FBQ00sT0FBYixHQUF1QixZQUFXO0FBQzlCUCxFQUFBQSxPQUFPLEdBQUdBLE9BQU8sR0FBRyxDQUFwQjtBQUNBUSxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWVQsT0FBWjtBQUNBLE1BQUlVLFdBQVcsR0FDWFIsUUFBUSxDQUFDQyxhQUFULENBQXVCLFNBQXZCLEVBQWtDUSxLQUR0QztBQUVBLE1BQUlDLFVBQVUsR0FDVlYsUUFBUSxDQUFDQyxhQUFULENBQXVCLFFBQXZCLEVBQWlDUSxLQURyQztBQUVBSCxFQUFBQSxPQUFPLENBQUNDLEdBQVIsQ0FBWUMsV0FBWjtBQUNBTCxFQUFBQSxRQUFRLENBQUNRLFNBQVQsR0FBcUIsYUFBckI7QUFHSVQsRUFBQUEsU0FBUyxDQUFDUyxTQUFWLEdBQXNCLHVDQUF1Q2IsT0FBN0Q7O0FBRUosTUFBSVksVUFBVSxLQUFLLEtBQWYsSUFBd0JGLFdBQVcsSUFBSSxFQUEzQyxFQUErQztBQUMzQ0wsSUFBQUEsUUFBUSxDQUFDUSxTQUFULEdBQXFCLG1CQUFyQjtBQUNILEdBRkQsTUFFTyxJQUFJRCxVQUFVLEtBQUssSUFBZixJQUF1QkYsV0FBVyxJQUFJLEVBQTFDLEVBQThDO0FBQ2pETCxJQUFBQSxRQUFRLENBQUNRLFNBQVQsR0FBcUIsWUFBckI7QUFDSCxHQUZNLE1BRUEsSUFBSUQsVUFBVSxLQUFLLElBQWYsSUFBdUJGLFdBQVcsSUFBSSxFQUExQyxFQUE4QztBQUNqREwsSUFBQUEsUUFBUSxDQUFDUSxTQUFULEdBQXFCLHNCQUFyQjtBQUNILEdBRk0sTUFFQSxJQUFJRCxVQUFVLEtBQUssS0FBZixJQUF3QkYsV0FBVyxJQUFJLEVBQTNDLEVBQStDO0FBQ2xETCxJQUFBQSxRQUFRLENBQUNRLFNBQVQsR0FBcUIsUUFBckI7QUFDSDtBQUlKLENBekJEIiwic291cmNlc0NvbnRlbnQiOlsiXG5cbmxldCBjb3VudGVyID0gMDtcbmxldCBzdWJtaXRCdXR0b24gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLnN1Ym1pdFwiKTtcbmxldCBtZXNzYWdlczIgPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLm1lc3NhZ2VzMlwiKTtcbmxldCBtZXNzYWdlcyA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIubWVzc2FnZXNcIik7XG5sZXQgcXVpelJlc3VsdCA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIucmVzdWx0c1wiKTtcbiAgIFxuXG4gICAgXG5zdWJtaXRCdXR0b24ub25jbGljayA9IGZ1bmN0aW9uKCkge1xuICAgIGNvdW50ZXIgPSBjb3VudGVyICsgMTtcbiAgICBjb25zb2xlLmxvZyhjb3VudGVyKTtcbiAgICBsZXQgaGVpZ2h0SW5wdXQgPVxuICAgICAgICBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKFwiLmhlaWdodFwiKS52YWx1ZTtcbiAgICBsZXQgY2xlYXRJbnB1dCA9XG4gICAgICAgIGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoXCIuY2xlYXRcIikudmFsdWU7XG4gICAgY29uc29sZS5sb2coaGVpZ2h0SW5wdXQpO1xuICAgIG1lc3NhZ2VzLmlubmVySFRNTCA9IFwidXNlckNvbW1lbnRcIjtcbiAgICBcbiAgICBcbiAgICAgICAgbWVzc2FnZXMyLmlubmVySFRNTCA9IFwiIHlvdSBkaWQgdGhlIHF1aXogdGhpcyBtYW55IHRpbWVzIFwiICsgY291bnRlcjtcbiAgICBcbiAgICBpZiAoY2xlYXRJbnB1dCA9PT0gXCJ5ZXNcIiAmJiBoZWlnaHRJbnB1dCA+PSA2Nykge1xuICAgICAgICBtZXNzYWdlcy5pbm5lckhUTUwgPSBcIkFtZXJpY2FuIGZvb3RiYWxsXCI7XG4gICAgfSBlbHNlIGlmIChjbGVhdElucHV0ID09PSBcIm5vXCIgJiYgaGVpZ2h0SW5wdXQgPj0gNjcpIHtcbiAgICAgICAgbWVzc2FnZXMuaW5uZXJIVE1MID0gXCJCYXNrZXRiYWxsXCI7XG4gICAgfSBlbHNlIGlmIChjbGVhdElucHV0ID09PSBcIm5vXCIgJiYgaGVpZ2h0SW5wdXQgPD0gNjcpIHtcbiAgICAgICAgbWVzc2FnZXMuaW5uZXJIVE1MID0gXCJ5b3UgZG9udCBwbGF5IHNwb3J0c1wiO1xuICAgIH0gZWxzZSBpZiAoY2xlYXRJbnB1dCA9PT0gXCJ5ZXNcIiAmJiBoZWlnaHRJbnB1dCA8PSA2Nykge1xuICAgICAgICBtZXNzYWdlcy5pbm5lckhUTUwgPSBcInNvY2NlclwiO1xuICAgIH1cbiBcblxuXG59OyJdfQ==</script></body></html>
